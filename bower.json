@@ -1,0 +1,21 @@
+{
+  "name": "jsregex",
+  "description": "Javascript Regular Expression reference and test app",
+  "main": "gulpfile.js",
+  "authors": [
+    "Alex Ewerlöf"
+  ],
+  "license": "(C) UserPixel.com All rights reserved",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/bower_components",
+    "src/bower",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7"
+  }
+}

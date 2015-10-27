@@ -1,0 +1,17 @@
+.regex
+  input
+    font-family inherit
+    font-size inherit
+    border none
+
+#test-string
+  color blue
+
+.results-view
+  ol
+    counter-reset o-counter -1
+    list-style-type none
+
+    li:before
+      content '[' counter(o-counter) '] = '
+      counter-increment o-counter
