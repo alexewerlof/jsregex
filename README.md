@@ -35,6 +35,13 @@ Then `prepare` each platform by running:
 $ cordova prepare
 ```
 
+When you're ready with your changes, create the packages by running:
+
+```
+$ cordova build
+```
+
+
 # Contribute
 
 Contributions are welcome. Please don't break the coding conventions and make
