@@ -21,13 +21,19 @@ Install Ionic, Cordova and other required tools:
 $ npm install -g ionic gulp bower cordova karma-cli
 ```
 
-Then build the project:
+Then build the web part of the project:
 
 ```
 $ gulp build
 ```
 
 This should populate the `www` directory.
+
+Then `prepare` each platform by running:
+
+```
+$ cordova prepare
+```
 
 # Contribute
 
