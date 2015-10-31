@@ -1,11 +1,13 @@
-angular.module('app', ['ngMaterial'])
-.controller('AppController', function($mdSidenav) {
-  var vm = this;
+'use strict';
 
-  vm.foo = 'bar';
+class AppController {
+  constructor() {
+    this.foo = 'ber';
+  }
 
-  vm.toggleSidenav = function(menuId) {
+  toggleSidenav (menuId) {
     $mdSidenav(menuId).toggle();
-  };
+  }
+}
 
-});
+angular.module('app', ['ngMaterial']).controller('AppController', () => new AppController);

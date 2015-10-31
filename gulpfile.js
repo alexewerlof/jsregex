@@ -5,6 +5,7 @@ var mainBowerFiles = require('gulp-main-bower-files');
 var changed = require('gulp-changed');
 var stylus = require('gulp-stylus');
 var del = require('del');
+const babel = require('gulp-babel');
 
 var options = {
   dist: 'www/',
@@ -23,15 +24,16 @@ gulp.task('build:bower', () => {
 });
 
 gulp.task('build:js', () => {
-  return gulp.src(options.src + '**/*.js', {base:options.src})
+  return gulp.src(options.src + '/js/**/*.js', {base:options.src})
+    // .pipe(babel())
     .pipe(changed(options.dist))
     .pipe(gulp.dest(options.dist));
 });
 
-gulp.task('build:stylus', () => {
+gulp.task('build:css', () => {
   return gulp.src(options.src + '**/*.styl', {base:options.src})
     .pipe(changed(options.dist), {extension: '.css'})
-    .pipe(stylus())
+    .pipe(stylus({'include css': true}))
     .pipe(gulp.dest(options.dist));
 });
 
@@ -41,6 +43,6 @@ gulp.task('build:html', () => {
     .pipe(gulp.dest(options.dist));
 });
 
-gulp.task('build', ['build:bower', 'build:js', 'build:html', 'build:stylus']);
+gulp.task('build', ['build:bower', 'build:js', 'build:html', 'build:css']);
 
 gulp.task('default', ['build']);
