@@ -9,18 +9,25 @@ It has the following main features:
 
 # Technology
 
-This app is built using Javascript, Angular, Ionic on top of Codrova.
+This app is built using Javascript, Angular, Angular Material on top of Codrova.
 
 # Development setup
 
 You need Node.js, JDK and Angular SDK.
 
-Install Ionic, Cordova and other required tools:
+Install Cordova and other development required tools:
 
 ```
-$ npm install -g ionic gulp bower cordova karma-cli
+$ npm install -g gulp bower cordova karma-cli
 ```
 
+Then install the local dependencies:
+
+```
+$ npm install
+```
+
+This will first install npm packages and then the bower packages.
 Then build the web part of the project:
 
 ```
@@ -32,15 +39,21 @@ This should populate the `www` directory.
 Then `prepare` each platform by running:
 
 ```
-$ cordova prepare
-```
-
-When you're ready with your changes, create the packages by running:
-
-```
 $ cordova build
 ```
 
+Which runs `prepare` and `compile`.
+
+You can then serve the `www` page locally on the given port (default 8000).
+
+```
+$ cordova serve [port]
+```
+
+See [Cordova's npm page](https://www.npmjs.com/package/cordova)
+for more info.
+If there are any issues with Cordova
+[check this](https://www.npmjs.com/package/cordova#known-issues-and-troubleshooting).
 
 # Contribute
 

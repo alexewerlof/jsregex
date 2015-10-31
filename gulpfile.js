@@ -12,14 +12,14 @@ var options = {
 }
 
 gulp.task('clean', function () {
-  return del([options.dist + '**/*']);
+  return del([options.dist + '**/*'], {force:true});
 });
 
 gulp.task('build:bower', () => {
   gulp.src('./bower.json')
     .pipe(mainBowerFiles())
     .pipe(changed(options.dist))
-    .pipe(gulp.dest(options.src));
+    .pipe(gulp.dest(options.dist + '/bower'));
 });
 
 gulp.task('build:js', () => {
@@ -28,7 +28,7 @@ gulp.task('build:js', () => {
     .pipe(gulp.dest(options.dist));
 });
 
-gulp.task('build:stul', () => {
+gulp.task('build:stylus', () => {
   return gulp.src(options.src + '**/*.styl', {base:options.src})
     .pipe(changed(options.dist), {extension: '.css'})
     .pipe(stylus())
@@ -41,6 +41,6 @@ gulp.task('build:html', () => {
     .pipe(gulp.dest(options.dist));
 });
 
-gulp.task('build', ['build:bower', 'build:js', 'build:html', 'build:stul']);
+gulp.task('build', ['build:bower', 'build:js', 'build:html', 'build:stylus']);
 
 gulp.task('default', ['build']);

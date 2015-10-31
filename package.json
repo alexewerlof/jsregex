@@ -4,12 +4,15 @@
   "description": "Javascript Regular Expression reference and test app",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "karma run"
+    "test": "karma run",
+    "postinstall": "bower install"
   },
   "author": "Alex Ewerlöf",
-  "license": "(C) UserPixel.com All rights reserved",
+  "license": "MIT",
+  "repository": "userpixel/jsregex",
   "devDependencies": {
     "babel": "^5.8.23",
+    "cordova": "^5.3.3",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-changed": "^1.3.0",
