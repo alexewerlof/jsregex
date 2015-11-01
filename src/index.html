@@ -1,55 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app" ng-controller="AppController as app">
-  <head>
-    <meta charset="utf-8">
-    <title>Javascript RegEx</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/index.css" />
-  </head>
-  <body ng-cloak>
-    {{app.foo}}
-    <div class="regex">
-      <code>
-        <span>/</span>
-        <input id="regex-pattern"
-               type="text"
-               placeholder="regexp"/>
-        <span>/</span>
-        <input id="regex-flags"
-               type="text"
-               placeholder="gimyu"
-               pattern="[GgIiMmYyUu]"/>
-      </code>
-      <div class="regex-error">No error</div>
-    </div>
-    <textarea id="test-string"
-              rows="5"
-              placeholder="test string"></textarea>
-    <textarea id="param-string"
-              rows="5"
-              placeholder="test string"></textarea>
-    <div>
-      <select id="function-selector">
-        <option data-name="exec">exec()</option>
-        <option data-name="test">test()</option>
-        <option data-name="match"
-                data-target="s">match()</option>
-        <option data-name="search"
-                data-target="s">search()</option>
-        <option data-name="replace"
-                data-target="s"
-                data-param="replace with">replace()</option>
-        <option data-name="split"
-                data-target="s"
-                data-param="separator">split()</option>
-      </select>
-    </div>
-    <div id="results-view"></div>
-    <script src="bower/angular/angular.js"></script>
-    <script src="bower/angular-animate/angular-animate.js"></script>
-    <script src="bower/angular-aria/angular-aria.js"></script>
-    <script src="bower/angular-material/angular-material.js"></script>
-    <script src="bower/lodash/lodash.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Javascript RegEx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="bower/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" />
+</head>
+
+<body ng-cloak>
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <i class="zmdi zmdi-apple"></i>
+        </md-button>
+        <h2>
+          <span>Toolbar with Icon Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <br>
+    <md-toolbar class="md-tall md-accent">
+      <h2 class="md-toolbar-tools">
+        <span>Toolbar: tall (md-accent)</span>
+      </h2>
+    </md-toolbar>
+    <br>
+    <md-toolbar class="md-tall md-warn md-hue-3">
+      <span flex></span>
+      <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+        <span class="md-flex">Toolbar: tall with actions pin to the bottom (md-warn md-hue-3)</span>
+      </h2>
+    </md-toolbar>
+  </md-content>
+
+
+  {{app.foo}}
+  <md-button> Button </md-button>
+
+
+
+
+
+
+
+
+
+
+  <div class="regex">
+    <code>
+      <span>/</span>
+      <input id="regex-pattern" type="text" placeholder="regexp" />
+      <span>/</span>
+      <input id="regex-flags" type="text" placeholder="gimyu" pattern="[GgIiMmYyUu]" />
+    </code>
+    <div class="regex-error">No error</div>
+  </div>
+  <textarea id="test-string" rows="5" placeholder="test string"></textarea>
+  <textarea id="param-string" rows="5" placeholder="test string"></textarea>
+  <div>
+    <select id="function-selector">
+      <option data-name="exec">exec()</option>
+      <option data-name="test">test()</option>
+      <option data-name="match" data-target="s">match()</option>
+      <option data-name="search" data-target="s">search()</option>
+      <option data-name="replace" data-target="s" data-param="replace with">replace()</option>
+      <option data-name="split" data-target="s" data-param="separator">split()</option>
+    </select>
+  </div>
+  <div id="results-view"></div>
+
+  <script src="bower/angular/angular.js"></script>
+  <script src="bower/angular-animate/angular-animate.js"></script>
+  <script src="bower/angular-aria/angular-aria.js"></script>
+  <script src="bower/angular-material/angular-material.js"></script>
+  <script src="bower/lodash/lodash.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
