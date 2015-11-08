@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var sourcemaps = require('gulp-sourcemaps');
 var mainBowerFiles = require('gulp-main-bower-files');
 var changed = require('gulp-changed');
 var stylus = require('gulp-stylus');
@@ -25,8 +26,10 @@ gulp.task('build:bower', () => {
 
 gulp.task('build:js', () => {
   return gulp.src(options.src + '/js/**/*.js', {base:options.src})
-    // .pipe(babel())
     .pipe(changed(options.dist))
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(options.dist));
 });
 
@@ -43,6 +46,12 @@ gulp.task('build:html', () => {
     .pipe(gulp.dest(options.dist));
 });
 
-gulp.task('build', ['build:bower', 'build:js', 'build:html', 'build:css']);
+gulp.task('build:img', () => {
+  return gulp.src(options.src + 'img/**/*', {base:options.src})
+    .pipe(changed(options.dist))
+    .pipe(gulp.dest(options.dist));
+});
+
+gulp.task('build', ['build:bower', 'build:js', 'build:html', 'build:css', 'build:img']);
 
 gulp.task('default', ['build']);
