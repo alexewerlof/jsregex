@@ -55,6 +55,11 @@ for more info.
 If there are any issues with Cordova
 [check this](https://www.npmjs.com/package/cordova#known-issues-and-troubleshooting).
 
+# TODO
+
+* Replace gulp with WebPacks
+* Add regexp utility functions (for actually doing some string processing rather than learning).
+
 # Contribute
 
 Contributions are welcome. Please don't break the coding conventions and make
